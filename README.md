@@ -6,3 +6,6 @@
 3. install composer.phar to install php package: curl -s http://getcomposer.org/installer | php
 4. install package in composer.json php composer.phar install
 5. Run by: php app.php &
+
+# Example Publisher for Worker 
+1. check in folder publisher
