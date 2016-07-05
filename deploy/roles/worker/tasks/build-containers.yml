@@ -1,0 +1,22 @@
+---
+- name: create docker container
+  sudo: yes
+  docker:
+        name: "{{ docker.container.name }}"
+        image: "{{  docker.image.name  }}:latest"
+        detach: true
+        state: reloaded
+        restart_policy: always
+        env:
+          RABBITMQ_USER={{rabbitmq.user}}
+          RABBITMQ_PASSWORD={{rabbitmq.pass}}
+          RABBITMQ_HOST={{rabbitmq.connection}}
+          RABBITMQ_PORT={{rabbitmq.port}}
+          RABBITMQ_QUEUE={{rabbitmq.queue.queue}}
+          RABBITMQ_EXCHANGE={{rabbitmq.queue.exchange}}
+          RABBITMQ_BINDKEY={{rabbitmq.queue.bind_key}}
+          LOG_FOLDER="simple-worker/log/"
+        volumes:
+        - "{{ folder.workplace }}:/opt/source_code"
+        - "{{ folder.workplace }}/supervisor.d:/etc/supervisor.d"
+        - "{{ folder.workplace }}/supervisord.conf:/etc/supervisord.conf"

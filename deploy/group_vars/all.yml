@@ -1,0 +1,10 @@
+---
+rabbitmq:
+      connection: 'localhost'
+      user: 'guest'
+      pass: 'guest'
+      port: '5672'
+      queue:
+        queue: 'example'
+        exchange: 'example'
+        bind_key: 'example'

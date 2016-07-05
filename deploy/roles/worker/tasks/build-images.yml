@@ -1,0 +1,8 @@
+---
+# Build image from Dockerfile
+- name: check or build image
+  sudo: yes
+  docker_image:
+        path={{ folder.workplace }}
+        name={{ docker.image.name }}
+        state=build

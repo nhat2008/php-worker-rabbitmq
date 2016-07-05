@@ -1,0 +1,11 @@
+---
+folder:
+      workplace: '/data/worker'
+docker:
+      image:
+           name: 'simple-worker'
+      container:
+           name: 'simple-worker'
+project:
+      git: 'https://github.com/nhat2008/php-worker-rabbitmq.git'
+      workplace: 'php-worker-rabbitmq'

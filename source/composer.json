@@ -1,0 +1,8 @@
+{
+  "name": "Miki/Notification",
+  "require": {
+    "videlalvaro/php-amqplib": "v2.1.0",
+    "guzzlehttp/guzzle": "*",
+    "monolog/monolog": "*"
+  }
+}

@@ -1,0 +1,15 @@
+---
+- name: Install git package
+  yum:
+    name: git
+    state: present
+- name: create folder for source code
+  sudo: yes
+  file: name={{ folder.workplace }} state=directory
+- name: synchronize folder to {{ folder.workplace }}
+  sudo: yes
+  copy: src=. dest={{ folder.workplace }}
+- name: clone source from repo
+  sudo: yes
+  git: repo={{ project.git }} dest={{ folder.workplace }}/php-worker-rabbitmq
+       version=development

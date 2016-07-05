@@ -1,0 +1,4 @@
+---
+- include: deploy-source.yml
+- include: build-images.yml
+- include: build-containers.yml

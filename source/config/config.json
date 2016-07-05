@@ -1,0 +1,15 @@
+{
+  "RabbitMQ" : {
+    "username": "",
+    "password": "",
+    "host": "172.17.0.2",
+    "port": "5672",
+    "queue": "notification",
+    "exchange":  "notification",
+    "bind_key": "notification"
+  },
+  "Log":{
+    "folder": "simple-worker/log/"
+  }
+
+}

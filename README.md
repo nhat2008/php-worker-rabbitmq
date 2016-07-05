@@ -2,10 +2,11 @@
 1. install rabbittmq
    - Ref: https://www.rabbitmq.com/install-debian.html
    - or Docker: $ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_ERLANG_COOKIE='secret cookie here' rabbitmq:3
-2. config the config.json in miki-notification/config/config.json
-3. install composer.phar to install php package: curl -s http://getcomposer.org/installer | php
-4. install package in composer.json php composer.phar install
-5. Run by: php app.php &
-
-# Example Publisher for Worker 
-1. check in folder publisher
+2. config 
+    2.1 the config.json in php-worker-rabbitmq/source/config/config.json if don't use the deploy
+    2.2 Using the ansible for deploying: config the ENV in group_vars/main.yml or roles/worker/vars/main.yml
+3. Run
+    3.1 php app.php
+    3.2 Using ansible for deployingansi [we will control and monitoring the workers with supervisord]
+        3.2.1 install ansible , ansible-playbook
+        3.2.2 ansible-playbook -i hosts worker.yml
